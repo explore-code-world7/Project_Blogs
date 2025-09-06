@@ -13,7 +13,3 @@ sudo apt-get install -y libopencv-dev
 ```bash
 sudo apt-get install python3-opencv
 ```
-
-
-
-

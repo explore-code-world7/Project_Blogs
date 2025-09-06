@@ -225,3 +225,99 @@ for gpu in gpus:
 ```
 
 5. torch.empty_cache()就是清除所有torch缓存(是我output位置不对)
+
+# vmap
+
+## 使用 `vmap` 的示例
+
+`vmap` 是一个功能强大的工具，可以在 PyTorch 中实现向量化的计算，特别是在处理批次数据时。下面是一些使用 `vmap` 的具体示例。
+
+### 示例 1: 批量计算点积
+
+```python
+import torch
+from torch.func import vmap
+
+# 定义两个随机张量
+x = torch.randn(2, 5)  # (2, 5)
+y = torch.randn(2, 5)  # (2, 5)
+
+# 使用 vmap 批量计算点积
+batched_dot = vmap(torch.dot)  # [N, D], [N, D] -> [N]
+result = batched_dot(x, y)
+print(result)  # 输出的形状为 (2,)
+```
+
+### 示例 2: 批量模型预测
+
+假设我们有一个简单的线性模型：
+
+```python
+import torch
+from torch.func import vmap
+
+# 模型权重
+weights = torch.randn(5, requires_grad=True)
+
+# 定义模型
+def model(feature_vec):
+    return feature_vec.dot(weights).relu()
+
+# 创建一些样本数据
+batch_size = 3
+feature_size = 5
+examples = torch.randn(batch_size, feature_size)  # (3, 5)
+
+# 使用 vmap 批量运行模型
+result = vmap(model)(examples)
+print(result)  # 输出的形状为 (3,)
+```
+
+### 示例 3: 计算雅可比矩阵
+
+`vmap` 也可以用于更复杂的梯度计算，例如雅可比矩阵：
+
+```python
+import torch
+from torch.func import vmap
+
+# 定义函数
+def f(x):
+    return x ** 2
+
+# 创建一个随机张量
+x = torch.randn(5, requires_grad=True)  # (5,)
+
+# 计算函数值
+y = f(x)
+
+# 创建单位矩阵
+I_N = torch.eye(5)
+
+# 使用 vmap 计算雅可比矩阵的每一行
+def get_vjp(v):
+    return torch.autograd.grad(y, x, v)[0]
+
+jacobian = vmap(get_vjp)(I_N)  # (5, 5)
+print(jacobian)
+```
+
+### 示例 4: 嵌套的 `vmap`
+
+可以嵌套使用 `vmap`，进行多重向量化计算：
+
+```python
+import torch
+from torch.func import vmap
+
+# 定义两个随机张量
+x = torch.randn(2, 3, 5)  # (2, 3, 5)
+y = torch.randn(2, 3, 5)  # (2, 3, 5)
+
+# 嵌套 vmap 计算点积
+batched_dot = vmap(vmap(torch.dot))  # [N1, N0, D], [N1, N0, D] -> [N1, N0]
+result = batched_dot(x, y)
+print(result.shape)  # 输出的形状为 (2, 3)
+```
+
+这些示例展示了如何使用 `vmap` 来批量处理不同的操作。你可以根据需求调整输入和输出的维度，以实现你的功能需求。如果你有其他问题，请告诉我！

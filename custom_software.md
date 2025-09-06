@@ -27,10 +27,6 @@ sudo apt autoremove
 
 https://github.com/retorquere/zotero-deb
 
-```bash
-
-```
-
 # markdown
 
 有许多开源的 Markdown 编辑器可供选择，以下是一些流行的开源 Markdown 编辑器：

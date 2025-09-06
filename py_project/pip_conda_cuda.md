@@ -183,6 +183,12 @@ conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=
 
 https://github.com/pytorch/pytorch/wiki/PyTorch-Versions
 
+### 0.4.1!
+
+```bash
+conda install pytorch=0.4.1 torchvision=0.2.1 cudatoolkit=9.0 -c pytorch -y
+```
+
 ### nvidia-*-cu11的用法
 
 ```bash
@@ -418,3 +424,7 @@ To uninstall the NVIDIA Driver, run nvidia-uninstall
 ```bash
 sudo apt install nvidia-cuda-toolkit
 ```
+
+## runtime cuda_toolkit install
+
+[CUDA Toolkit 12.4 Downloads | NVIDIA Developer](https://developer.nvidia.com/cuda-12-4-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=22.04&target_type=deb_local)

@@ -47,4 +47,50 @@ sudo make install
 
 通过这些步骤，您可以成功构建和安装 CMake 项目。如果您有其他问题或需要进一步的帮助，请随时问我！
 
-# Python
+# torch.utils.cpp_extension
+
+* link：[Custom C++ and CUDA Extensions — PyTorch Tutorials 2.8.0+cu128 documentation](https://docs.pytorch.org/tutorials/advanced/cpp_extension.html)
+
+```python
+from setuptools import setup, Extension
+from torch.utils import cpp_extension
+
+setup(name='lltm_cpp',
+      ext_modules=[cpp_extension.CppExtension('lltm_cpp', ['lltm.cpp'])],
+      cmdclass={'build_ext': cpp_extension.BuildExtension})
+```
+
+* name='lltm_cpp'：指定包/分发名称为 lltm_cpp
+
+* ext_modules=[cpp_extension.CppExtension('lltm_cpp', ['lltm.cpp'])]
+  
+  - 使用 torch.utils.cpp_extension.CppExtension 声明一个需要编译的 C++ 扩展模块。
+  - 第一个参数 'lltm_cpp' 是扩展模块的导入名称（即编译后可通过 import lltm_cpp 导入）。
+  - 第二个参数 ['lltm.cpp'] 是该扩展的源文件列表；可以包含多个 .cpp/.cu 文件。
+  - CppExtension 会为编译设置合适的 include/link 标志以支持与 PyTorch 的 C++/CUDA API 配合（不自动包含 CUDA 支持，CUDA 文件需用 CUDAExtension）。
+
+* cmdclass={'build_ext': cpp_extension.BuildExtension}
+  
+  * 将setuptools的build_ext命令替换为PyTorch提供的BuildExtension
+  
+  * BuildExtension 在构建时会调用正确的编译器（g++/nvcc）、添加 PyTorch 的 include/lib 路径、传递适当的编译选项，从而正确编译并链接扩展。
+
+****
+
+* 替换cppExtension的等价写法
+
+```python
+Extension(
+   name='lltm_cpp',
+   sources=['lltm.cpp'],
+   include_dirs=cpp_extension.include_paths(),
+   language='c++')
+```
+
+## torch.utils.cpp\_extension.\_wrap\_function
+
+## nvcc编译指令
+
+```bash
+nvcc -c -o build/knn_cuda_kernel.so src/knn_cuda_kernel.cu -x cu -Xcompiler -fPIC -shared -Isrc
+```

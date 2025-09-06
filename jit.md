@@ -198,8 +198,6 @@ C知道说torch.jit.trace不支持，torch.jit.script支持，但本地试验的
 2. [torch.jit.trace与torch.jit.script的区别](https://cloud.tencent.com/developer/article/2067810)
 3. [torch.jit.trace Official Guide](https://pytorch.org/docs/stable/generated/torch.jit.trace.html)
 
-
-
 # implement
 
 > 我也不知道有什么意义，但好歹推进了一点
@@ -291,6 +289,7 @@ torch.jit.trace()只接受 Tuple[Tensor,...,Tensor] or Tensor
 把所有的tensor的组合(集合、列表、字典）全展成Tensor列表，一个个输入，终于编译成功了
 
 * 但效果未知，因为实际的模型包含了for循环，可能不支持，
+
 * 但本模块中的所有for均为固定格式的判断，没有if-else路径的切换，理论上是可以的
   
   ## Q1
@@ -315,9 +314,3 @@ torch.jit.trace 是基于采样（tracing）的方式，它会记录函数在特
 ==重要的是，torch.jit.script不能编译继承类!!!==
 
 ## solution: 考虑把nn.Module源码搬到要继承的类下面
-
-
-
-
-
-

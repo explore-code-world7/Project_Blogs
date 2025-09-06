@@ -114,6 +114,12 @@ To ssh://10.15.82.118:10022/home/chenlei/IsaacLab/.git
  * [new branch]          main -> main
 ```
 
+* push到某一分支
+
+```bash
+git push <remote-name> <local-branch-name>:<remote-branch-name>
+```
+
 ## push/pull前的处理
 
 * 暂存
@@ -330,6 +336,96 @@ git reset --hard xxx
 git push origin main --force
 ```
 
+## pull from submodule
+
+* server
+
+```bash
+cd rsl_rl; nocore
+git add -A; git commit;
+cd ..; git add rsl_rl;
+git add -A; git commit;
+tocore
+```
+
+* local
+
+```bash
+myreset=git reset --hard HEAD~1; git pull server main
+```
+
+* bug1
+
+```bash
+fatal: remote error: upload-pack: not our ref 55d3ae6c62ad6b4ca1fe4dc4be6dfa142670f8b1
+Errors during submodule fetch:
+        rsl_rl
+```
+
+* ans
+
+```bash
+git submodule deinit -f --all
+git submodule init
+git submodule update --init --recursive
+```
+
+## push to submodule
+
+```python
+git submodule init
+git push --recurse-submodules=check
+```
+
+## git pull自动拉取子仓库
+
+### 方法1
+
+1. 为子仓库设置远程分支
+
+```bash
+cd rsl_rl
+git branch --set-upstream-to=origin/test test
+```
+
+2. 在main repo中设置子仓库.git
+
+```bash
+git submodule init
+```
+
+3. 自动拉取远程分支
+
+```bash
+git submodule foreach git pull
+```
+
+### 方法2
+
+1. 在main repo中设置子仓库.git
+
+```bash
+git submodule init
+```
+
+2. git pull设置指针
+
+```bash
+git pull --recurse-submodules
+```
+
+3. 拉取
+
+```bash
+git submodule update --init --recursive
+```
+
+## git push自动推送子repo
+
+```bash
+git submodule foreach 'git push'
+```
+
 # points
 
 1. checkout只能恢复文件
@@ -387,6 +483,9 @@ git stash
 git stash list
 git stash apply stash@{n}
 ```
+
+8. 对server要nocore-commit-tocore才能拉到最新的
+* 尝试git add -A
 
 # LFS
 

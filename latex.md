@@ -37,14 +37,12 @@ b_3
 
 ```latex
 \begin{figure*}[t]
-	\centering
-	\includegraphics[width=0.9\textwidth]{HIM_process}
-	\caption{Process of HIM predict implicit observation and current velocuty based on historic observation, which is concatenated with proprioceptive observation for policy to generate action and training of HIM with SwAV}
-	\label{fig:himproces}
+    \centering
+    \includegraphics[width=0.9\textwidth]{HIM_process}
+    \caption{Process of HIM predict implicit observation and current velocuty based on historic observation, which is concatenated with proprioceptive observation for policy to generate action and training of HIM with SwAV}
+    \label{fig:himproces}
 \end{figure*}
 ```
-
-
 
 # 子图并排
 
