@@ -414,12 +414,20 @@ git submodule init
 ```bash
 git pull --recurse-submodules
 ```
+* 主仓库 pull 到最新
+* 子模块 checkout 到 主仓库记录的那个 commit
+* 若该 commit 之前本地没有 → 自动下载
+* ✅ 保证主仓库 + 子模块状态一致
+* 这个够用了
 
 3. 拉取
 
 ```bash
 git submodule update --init --recursive
+git submodule update --remote --merge
 ```
+* 初始化新环境	git submodule update --init --recursive
+* 更新子模块到最新 upstream	git submodule update --remote
 
 ## git push自动推送子repo
 
