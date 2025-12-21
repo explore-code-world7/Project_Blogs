@@ -441,8 +441,14 @@ git commit
 git push
 ```
 ### automatically
+* update remote branch
 ```bash
-git submodule foreach 'git add .; git commit --amend --no-edit; git push origin test --force'
+git config -f .gitmodules submodule.rsl_rl.branch main
+git submodule update --remote
+```
+* push each submodule
+```bash
+git submodule foreach 'git add .; git commit --amend --no-edit; git push --force'
 ```
 
 # points
