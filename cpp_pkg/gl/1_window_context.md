@@ -38,7 +38,34 @@ int main()
 ```
 
 # 窗口尺寸变化时自动调用
-
 ```cpp
 glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+```
+
+# 清空释放的内存
+
+```cpp
+glfwTerminate();
+return 0;
+```
+
+# 窗口事件的检查-glfwGetKey
+
+```cpp
+void processInput(GLFWwindow *window)
+{
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+        glfwSetWindowShouldClose(window, true);
+}
+```
+## 调用
+
+```cpp
+while (!glfwWindowShouldClose(window))
+{
+    processInput(window);
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+}  
 ```
