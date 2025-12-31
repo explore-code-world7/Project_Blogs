@@ -79,3 +79,10 @@ while (!glfwWindowShouldClose(window))
     glfwPollEvents();
 }  
 ```
+
+# set清屏颜色
+```cpp
+
+glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+glClear(GL_COLOR_BUFFER_BIT);
+```
