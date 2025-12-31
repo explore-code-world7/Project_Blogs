@@ -1,3 +1,13 @@
+# 代码编译
+```bash
+sudo apt-get install freeglut3-dev
+```
+```bash
+gcc filename.c -lGL -lGLU -lglut
+```
+
+
+
 # gl自带函数
 
 glClear – 清除缓冲区。
