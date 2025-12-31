@@ -1,5 +1,6 @@
 * 纹理的像素，怎么绑定到内存数组阵列?
 
+# 纹理图像预处理
 * texture裁剪
 ```cpp
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
