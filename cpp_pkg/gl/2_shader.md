@@ -37,6 +37,7 @@ void main()
 }
 
 ```
+* fragment shader的输出 ✔️ 写入 GPU 显存中的 FBO / 默认 framebuffer
 
 
 分为若干阶段: 
