@@ -11,6 +11,35 @@ gcc filename.c -lGL -lGLU -lglut
 sudo apt-get install libglfw3-dev
 ```
 
+## 编译glad
+* 添加头文件
+```bash
+add_library(glad glad/src/glad.c)
+target_include_directories(glad  PUBLIC glad/include)
+target_link_libraries(main glfw ${GL_LIBRARY} glad)
+```
+
+* 方法2:
+```bash
+cd glad/include
+sudo mv glad/ /usr/local/include #将glad目录移动到/usr/local/include
+sudo mv KHR/ /usr/local/include #将KHR目录移动到/usr/local/include
+```
+* 添加.c到工程
+```bash
+cmake_minimum_required(VERSION 2.8.1)
+
+project(window)
+
+find_package(glfw3 REQUIRED)
+add_library(glad 3rdparty/glad/src/glad.c)
+
+add_executable(window window.cpp)
+
+target_link_libraries(window  glfw  glad)
+
+```
+
 
 # gl自带函数
 
