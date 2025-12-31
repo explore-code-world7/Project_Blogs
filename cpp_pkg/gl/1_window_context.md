@@ -41,6 +41,16 @@ int main()
 ```cpp
 glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 ```
+# 更新窗口内容
+
+```cpp
+while(!glfwWindowShouldClose(window))
+{
+    glfwSwapBuffers(window);
+    glfwPollEvents();    
+}
+```
+* glfwPollEvents: checks if any events are triggered (like keyboard input or mouse movement events), updates the window state, and calls the corresponding functions (which we can register via callback methods)
 
 # 清空释放的内存
 
