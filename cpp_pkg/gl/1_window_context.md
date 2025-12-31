@@ -11,6 +11,11 @@ gcc filename.c -lGL -lGLU -lglut
 sudo apt-get install libglfw3-dev
 ```
 
+* 安装glm: 按照GLSL的数学规范设计的，C++头文件数学库;
+```bash
+sudo apt install libglm-dev
+```
+
 ## 编译glad
 * 添加头文件
 ```bash
