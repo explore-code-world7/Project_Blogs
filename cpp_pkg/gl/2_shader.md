@@ -110,9 +110,10 @@ in vec3 viewDirection_camera[];
 
 * submiited by Emit Vertext() and EndPrimitive();
 
-
 # transform to pixel space: MVP
 1. M: model space > world
 2. V: world space > camera
 3. P: camera space > pixel
 $\in R^{4\times 4}$
+
+# 
