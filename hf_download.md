@@ -1,10 +1,10 @@
 # hf download
 ```bash
 hf download ShapeNet/ShapeNetCore --repo-type=dataset \
-    --local-dir ./ --cache-dir= ./ --max-workers 1
+    --local-dir=./ --cache-dir=./ --max-workers 1
 
 hf download ShapeNet/ShapeNetCore-archive --repo-type=dataset \
-    --local-dir ./ --cache-dir= ./ --max-workers 1
+    --local-dir=./ --cache-dir=./ --max-workers 1
 ```
 
 🪫: env.python >=3.9 is required by hf cli
