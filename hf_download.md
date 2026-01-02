@@ -25,7 +25,7 @@ cache-dir        ← 断点续传、校验
 local-dir        ← 你实际使用的数据
 ```
 
-* 卡住过一会，就停下来了
+* 卡住过一会，就recover normality了
 
 # snapshot_download
 ```
