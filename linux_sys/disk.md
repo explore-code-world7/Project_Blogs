@@ -11,6 +11,13 @@ sudo apt install bsdtar  # 安装
 bsdtar -xf ShapeNetCore.v1.zip -C /path/to/ spacious_target/
 ```
 
+# 本地短点续传
+
+```bash
+# 第一次不用指定目标目录
+rsync -avh --progress --partial   --partial-dir=ShapeNetCore.v2.zip  835c4fa2-7263-4df6-880c-3dedf3db1024/Dataset/CV/ShapeNetCore.v2.zip   E958-B530/
+```
+
 
 # 日志存储位置是坏块
 
@@ -28,8 +35,7 @@ Welcome to GNU Parted! Type 'help' to view a list of commands.
 (parted) print                                                            
 Model: Flash USB DisK 3.0 (scsi)
 Disk /dev/sda: 8389GB
-Sector size (logical/physical): 4096B/4096B
-Partition Table: gpt
+SSector size (logical/physical): 4096B/4096BPartition Table: gpt
 Disk Flags: 
 
 Number  Start   End     Size    File system  Name     Flags
