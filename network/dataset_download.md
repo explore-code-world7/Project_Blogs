@@ -38,10 +38,3 @@ snapshot_download(
     max_workers=4,
     allow_patterns="*",  # 可以也只下部分文件
 ```
-
-# aria2c
-* replace curl+wget
-```bash
-aria2c  -i  input_file
-aria2c  http://download.cs.stanford.edu/orion/nocs/camera_train.zip
-```
