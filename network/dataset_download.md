@@ -39,8 +39,9 @@ snapshot_download(
     allow_patterns="*",  # 可以也只下部分文件
 ```
 
-# unzip
+## decompress
 * zip
+
 ```bash
 # 1. 安装（如果尚未安装）
 sudo apt install p7zip-full
@@ -51,6 +52,7 @@ sudo apt install p7zip-full
 # 3. 如果想静默解压且不覆盖已有文件，可加-o和-y参数
 7z x ShapeNetCore.v1.zip -mmt=on -o./ -y
 ```
+
 
 * zip
 ```bash
@@ -69,3 +71,6 @@ sudo apt install pigz
 # 2. 流式解压（如果zip内是tar.gz/tar）
 unzip -p ShapeNetCore.v1.zip | pigz -dc | tar xf -
 ```
+
+
+* tar
