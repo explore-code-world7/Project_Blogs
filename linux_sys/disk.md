@@ -15,7 +15,7 @@ bsdtar -xf ShapeNetCore.v1.zip -C /path/to/ spacious_target/
 
 ```bash
 # 第一次不用指定目标目录
-rsync -avh --progress --partial   --partial-dir=ShapeNetCore.v2.zip  835c4fa2-7263-4df6-880c-3dedf3db1024/Dataset/CV/ShapeNetCore.v2.zip   E958-B530/
+rsync -avh --progress --partial   --partial-dir=.rsync-partial  /media/sky/835c4fa2-7263-4df6-880c-3dedf3db1024/Dataset/CV/ShapeNetCore.v2.zip   ./
 ```
 
 
