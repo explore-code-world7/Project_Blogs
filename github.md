@@ -1,3 +1,31 @@
+# 移动特定提交
+1. cherry-pick只挑一个
+```bash
+git log --oneline -5
+git checkout main
+git cherry-pick <提交哈希>
+```
+
+2. rebase
+* 变更main的顶端
+```bash
+git checkout main
+# 2. 将 master 分支上的新提交“重新播放”到 main 分支的顶端
+git rebase master
+```
+* 变更master的顶端再合并(best)
+```bash
+git checkout master
+git rebase main
+git checkout main
+git merge master
+```
+3. 合并
+```bash
+git checkout main
+git merge master
+```
+
 # upload repository
 
 * generate keys
