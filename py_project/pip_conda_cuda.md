@@ -16,7 +16,8 @@ sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 80
 
 * 用环境变量更新
 ```bash
-export PATH=/usr/local/cuda-11.7:$PATH
+# 要带上/bin路径
+export PATH=/usr/local/cuda-11.7:/usr/local/cuda-11.7/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 ```
 
