@@ -16,8 +16,8 @@ sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 80
 
 * 用环境变量更新
 ```bash
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-11.7:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 ```
 
 # 安装CUDA库,避免更新系统驱动
