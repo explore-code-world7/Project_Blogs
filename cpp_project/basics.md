@@ -1,3 +1,12 @@
+# 安装gcc并用soft link设置
+```bash
+# 11-gcc,g++
+sudo apt install gcc-11 g++-11
+# 然后设置默认版本
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 110
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 110
+```
+
 # /usr/local下目录的区别
 
 | 目录                   | 内容      | 作用                                 |
