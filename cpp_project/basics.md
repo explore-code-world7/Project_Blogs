@@ -1,4 +1,10 @@
-# 安装gcc并用soft link设置
+# various unique 3rdparty pkg
+```bash
+sudo apt install libgoogle-glog-dev
+```
+
+
+# 安装编译器gcc/++并用soft link设置
 ```bash
 # 11-gcc,g++
 sudo apt install gcc-11 g++-11
