@@ -1,5 +1,3 @@
-
-
 | 类型 | 旧宏 (OpenCV 3) | 新宏/用法 (OpenCV 4) |
 | :--- | :--- | :--- |
 | **图像读取标志** | `CV_LOAD_IMAGE_GRAYSCALE` | `IMREAD_GRAYSCALE` |
