@@ -5,6 +5,7 @@
 1. vertex shader变换坐标；
 2. geometry shader生成新的点；
 3. fragment shader对点上色；
+* alpha = opacity = 不透明度
 
 着色器 用 GLSL(OpenGL Shading Language) 库编写;
 ```cpp
