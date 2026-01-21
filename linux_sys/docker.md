@@ -3,9 +3,12 @@
 ```bash
 docker pull tyoung96/lvi_sam:1.0
 ```
-* 进入image
+* 创建image的container
 ```bash
 docker run -it --rm tyoung96/lvi_sam:1.0 /bin/bash
 ```
 
-# 2. 
+# 2. 进入创建好的container
+```
+docker exec -it <container_id> /bin/bash
+```
