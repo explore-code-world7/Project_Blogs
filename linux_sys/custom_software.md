@@ -1,3 +1,8 @@
+# 18.04-code
+```bash
+wget https://update.code.visualstudio.com/1.49.3/linux-x64/stable
+```
+
 # 默认输入法
 * install
 ```bash
