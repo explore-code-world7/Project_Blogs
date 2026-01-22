@@ -74,3 +74,10 @@ unzip -p ShapeNetCore.v1.zip | pigz -dc | tar xf -
 
 
 * tar
+
+
+# windows
+```bash
+curl -o ".\garden.bag"  "https://drive.usercontent.google.com/download?id=1GgkBF0Nql8yMR-edQ7rWhU1MNXM6iKwc&export=download&confirm=t&uuid=bf3761f8-5cd7-46ba-a9eb-3516b5c09def"
+Invoke-WebRequest -Uri "https://example.com/file.zip" -OutFile "C:\Path\To\Save\file.zip"
+```
