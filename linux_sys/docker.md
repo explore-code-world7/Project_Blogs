@@ -36,3 +36,14 @@ docker cp --archive C:\config\ my_container:/etc/
 # ?修改docker的swap space size
 
 
+
+# docker不自带图形界面
+🔄 WSL2 原生 vs Docker 容器：图形支持对比
+场景	图形支持机制	配置要求
+WSL2 原生 Ubuntu	自动通过 DISPLAY=:0 连接到 Windows 显示	几乎无需配置，安装 GUI 应用即可运行
+Docker 容器	隔离环境，默认无显示连接	必须手动配置环境变量和卷挂载
+
+关键区别：Docker 容器是完全隔离的沙箱环境，它不会自动继承 WSL2 的显示设置。
+
+
+
