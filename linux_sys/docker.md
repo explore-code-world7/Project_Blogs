@@ -5,6 +5,10 @@ docker pull tyoung96/lvi_sam:1.0
 ```
 * 创建image的container
 ```bash
+# 正确方式
+docker run -it --name hello_sam tyoung96/lvi_sam:1.0 /bin/bash
+
+# 创建完后删除
 docker run -it --rm tyoung96/lvi_sam:1.0 /bin/bash
 ```
 
