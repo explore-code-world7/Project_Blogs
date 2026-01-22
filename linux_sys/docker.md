@@ -12,6 +12,20 @@ docker run -it --name hello_sam tyoung96/lvi_sam:1.0 /bin/bash
 docker run -it --rm tyoung96/lvi_sam:1.0 /bin/bash
 ```
 
+## run 命令参数详解
+🖥️ 命令参数详解
+参数	作用	详细说明
+docker run -it	交互式运行容器	-i 保持标准输入打开，-t 分配伪终端，让你可以像在真实终端中一样与容器交互
+--env="DISPLAY=host.docker.internal:0.0"	设置显示环境变量（最关键）	告诉容器内的图形程序：
+1. host.docker.internal 是 Docker 为 Windows 主机保留的特殊域名
+2. :0.0 表示使用主机的第一个显示器
+--env="QT_X11_NO_MITSHM=1"	Qt 图形库兼容性设置	防止 Qt 程序（如 RViz）使用共享内存时出错
+-v /tmp/.X11-unix:/tmp/.X11-unix	挂载 X11 套接字目录	让容器能访问主机的 X11 显示服务（虽然 Windows 没有原生的 /tmp/.X11-unix，但 Docker Desktop 会处理）
+-v C:\Users\firefox\catkin_ws:/home/catkin_ws	挂载工作目录	将 Windows 上的代码目录映射到容器内，实现文件同步
+ros:melodic	使用的 Docker 镜像	ROS Melodic 版本的官方基础镜像
+/bin/bash	启动命令	容器启动后自动进入 Bash shell
+
+
 # 2. 进入创建好的container
 ```bash
 docker exec -it <container_id> /bin/bash
@@ -32,6 +46,8 @@ docker cp my_container:/var/log/app.log C:\Users\firefox\logs\
 # 4. 复制时保持文件权限
 docker cp --archive C:\config\ my_container:/etc/
 ```
+
+
 
 # ?修改docker的swap space size
 
