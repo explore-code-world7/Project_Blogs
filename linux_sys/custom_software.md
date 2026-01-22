@@ -1,6 +1,11 @@
 # 18.04-code
 ```bash
 wget https://update.code.visualstudio.com/1.49.3/linux-x64/stable
+sudo mv ~/stable /tmp/code-stable.tar.gz
+sudo tar -xzf /tmp/code-stable.tar.gz -C /opt
+sudo ln -sf /opt/VSCode-linux-x64/bin/code /usr/local/bin/code
+sudo apt install -y libnss3 libgtk-3-0 libasound2 libgbm1 libxshmfence1 libgl1-mesa-glx libegl1-mesa libxss1
+code
 ```
 
 # 默认输入法
