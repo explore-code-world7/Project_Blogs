@@ -1,3 +1,19 @@
+# windows为终端设置conda
+1. 更改环境变量
+```bash
+D:\anaconda3
+D:\anaconda3\Scripts
+D:\anaconda3\Library\bin
+D:\anaconda3\Library\mingw-w64\bin  # 可选，用于编译 C/C++ 代码
+D:\anaconda3\Library\usr\bin        # 可选，用于 UNIX 工具的兼容
+```
+
+2. 为所有
+```bash
+conda init --all powershell
+```
+
+
 # 更新ubuntu默认cuda
 * 查看当前版本
 ```bash
