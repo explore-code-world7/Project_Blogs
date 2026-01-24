@@ -10,7 +10,7 @@
 当你运行 `pip install -e .` 时，幕后会发生以下事情（下图清晰地展示了其复合流程）：
 
 ```mermaid
-flowchart TD
+flowchart TD;
     A[“pip install -e . 开始”] --> B
 
     subgraph B [主要执行阶段]
