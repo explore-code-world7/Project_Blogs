@@ -11,17 +11,18 @@
 
 ```mermaid
 flowchart TD
-    A[“pip install -e . 开始”] --> B
+    A["pip install -e . 开始"] --> B
 
-    subgraph B [主要执行阶段]
-        B1[“1. 编译阶段<br>build_ext (调用setup.py)”] --> B2[“2. 链接与注册阶段”]
+    subgraph B[主要执行阶段]
+        direction TB
+        B1["1. 编译阶段 build_ext"] --> B2["2. 链接与注册阶段"]
     end
 
-    B2 --> C1[“创建 .egg-link 文件<br>（指向源码目录的软链接）”]
-    B2 --> C2[“在 easy-install.pth 中注册路径”]
-    B2 --> C3[“记录包的元数据<br>（名称、版本、依赖）”]
+    B2 --> C1["创建 .egg-link 文件"]
+    B2 --> C2["在 easy-install.pth 中注册路径"]
+    B2 --> C3["记录包的元数据"]
 
-    C1 & C2 & C3 --> D[“最终效果：<br>包可在环境中被直接导入”]
+    C1 & C2 & C3 --> D["最终效果: 包可在环境中被直接导入"]
 ```
 
 ### 🔧 核心区别对比
