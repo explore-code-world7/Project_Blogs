@@ -492,19 +492,19 @@ sudo apt install nvidia-cuda-toolkit
 
 ```mermaid
 flowchart TD
-    A[“.cu 源文件<br>（GPU内核代码）”] --> B
+    A[".cu 源文件<br>（GPU内核代码）"] --> B
     
     subgraph B [nvcc 核心处理过程]
-        B1[“分离主机(Host)与设备(Device)代码”]
-        B1 --> B2[“编译设备代码为PTX虚拟指令集”]
-        B2 --> B3[“进一步编译为特定GPU架构的机器码<br>（如 sm_86 for RTX 30系列）”]
+        B1["分离主机(Host)与设备(Device)代码"]
+        B1 --> B2["编译设备代码为PTX虚拟指令集"]
+        B2 --> B3["进一步编译为特定GPU架构的机器码<br>（如 sm_86 for RTX 30系列）"]
     end
     
-    B --> C[“生成.o目标文件或.so动态库”]
-    C --> D[“与PyTorch C++扩展胶水代码链接”]
-    D --> E[“最终生成 .so 文件<br>Python可直接导入使用”]
+    B --> C[“生成.o目标文件或.so动态库"]
+    C --> D["与PyTorch C++扩展胶水代码链接”]
+    D --> E["最终生成 .so 文件<br>Python可直接导入使用"]
     
-    F[“Python setup.py”] -- “调用” --> B
+    F["Python setup.py"] -- "调用" --> B
 ```
 
 ## `bash: nvcc: command not found`
