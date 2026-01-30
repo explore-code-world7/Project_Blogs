@@ -15,3 +15,5 @@
 
 # 1.30
 ## 我应该看CV的那些论文呢?
+1. NIPS/CoRL的3D CV/Robot topic;
+2. 公众号;
