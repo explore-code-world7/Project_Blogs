@@ -1,5 +1,10 @@
 > Linux的命令，用suffix= "--help"就知道用法了
 
+# multi-process unzip
+```bash
+ls *.zip | xargs -P $(nproc) -I{} 7z x {} -y
+```
+
 # real-time fresh
 ```bash
 watch -n 2 -d "free -h"
@@ -8,7 +13,6 @@ watch -n 2 -d "free -h"
 * 系统管理小能手
 
 <img width="2292" height="249" alt="image" src="https://github.com/user-attachments/assets/947eb0c0-a9a3-4879-b4ff-c4468f5de6a1" />
-
 
 # 恢复默认.bashrc
 
