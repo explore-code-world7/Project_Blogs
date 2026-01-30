@@ -17,3 +17,7 @@
 ## 我应该看CV的那些论文呢?
 1. NIPS/CoRL的3D CV/Robot topic;
 2. 公众号;
+
+## 我目前知道的套路
+1. 套用最新的模型flow-matching;
+2. 想到新的loss和网络结构;
