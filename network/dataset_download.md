@@ -6,6 +6,9 @@ hf download ShapeNet/ShapeNetCore --repo-type=dataset \
 conda deactivate
 hf download ShapeNet/ShapeNetCore-archive --repo-type=dataset \
     --local-dir=./ --cache-dir=./
+# dl partial file
+hf download bop-benchmark/lm lm_train_pbr.zip --repo-type=dataset\
+    --local-dir=./ --cache-dir=./ --max-workers 1
 ```
 
 🪫: env.python >=3.9 is required by hf cli
