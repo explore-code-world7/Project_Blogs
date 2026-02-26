@@ -517,8 +517,11 @@ nvidia-smi
 find /usr/local -name "nvcc" 2>/dev/null
 ls /usr/local/cuda*/bin/nvcc 2>/dev/null
 ```
-* 指定路径
+* 指定nvcc的环境变量路径
 ```bash
-export CUDA_HOME=/usr/local/cuda-12.4
+export CUDA_HOME=/usr/local/cuda-11.8
 export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 ```
+
+
