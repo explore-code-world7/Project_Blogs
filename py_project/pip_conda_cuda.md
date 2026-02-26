@@ -13,6 +13,10 @@ D:\anaconda3\Library\usr\bin        # 可选，用于 UNIX 工具的兼容
 conda init --all powershell
 ```
 
+# 直接安装cuda-toolkit
+```bash
+conda install -c nvidia cuda-toolkit=11.8 -y
+```
 
 # 更新ubuntu默认cuda
 * 查看当前版本
