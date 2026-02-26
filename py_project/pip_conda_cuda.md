@@ -37,10 +37,11 @@ export PATH=/usr/local/cuda-11.7:/usr/local/cuda-11.7/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 ```
 
-# 安装CUDA库,避免更新系统驱动
+# 安装CUDA库,避免更新系统驱动Driver
 
 ```bash
 sudo sh cuda_11.7.0_515.43.04_linux.run --toolkit --silent --override
+sudo sh cuda_11.8.0_520.61.05_linux.run --toolkit
 ```
 
 
