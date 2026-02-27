@@ -158,6 +158,13 @@ cp $(ls | grep 'cam-0001-[0-9]{4}.png')  rgb/
 
 * find /ls 不支持{n}匹配，也不支持\d
 
+
+3. 递归删除.pt结尾但不以000.pt结尾的文件
+
+```bash
+find . -type f -name "*.pt" ! -name "*000.pt" -delete
+```
+
 # 命令行输出作为另一命令的输入
 
 ## 1. 命令替换(Best!)
